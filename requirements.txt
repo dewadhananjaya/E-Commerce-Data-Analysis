@@ -1,5 +1,5 @@
+streamlit==1.32.2
 pandas
 matplotlib
 seaborn
-streamlit
 altair<5
