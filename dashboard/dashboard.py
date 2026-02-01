@@ -15,14 +15,14 @@ def load_data():
 
 all_df = load_data()
 
-# Sidebar untuk Filter Tanggal
+# Sidebar for Date Filter
 min_date = all_df["order_purchase_timestamp"].min()
 max_date = all_df["order_purchase_timestamp"].max()
 
 with st.sidebar:
-    st.image("https://github.com/dicodingacademy/assets/raw/main/logo.png") # Logo opsional
+    st.image("https://github.com/dicodingacademy/assets/raw/main/logo.png") 
     start_date, end_date = st.date_input(
-        label='Rentang Waktu',
+        label='Date Range',
         min_value=min_date,
         max_value=max_date,
         value=[min_date, max_date]
@@ -56,7 +56,7 @@ with col1:
     st.pyplot(fig)
 
 with col2:
-    st.write("Insight: Kategori dengan pendapatan tertinggi menunjukkan minat pasar yang dominan. Fokus stok pada kategori ini sangat disarankan.")
+    st.write("The category with the highest revenue indicates dominant market interest. Focusing stock on this category is highly recommended.")
     st.dataframe(category_revenue)
 
 st.markdown("---")
@@ -67,7 +67,7 @@ st.subheader("Customer Satisfaction vs Delivery Speed")
 col3, col4 = st.columns([2, 1])
 
 with col3:
-    # Filter data yang memiliki durasi pengiriman valid
+    # Filter data with valid delivery duration
     delivery_analysis = main_df.dropna(subset=['delivery_duration', 'review_score'])
     review_stats = delivery_analysis.groupby("review_score").delivery_duration.mean().reset_index()
 
@@ -86,8 +86,8 @@ with col3:
 
 with col4:
     st.markdown("""
-    **Pola Polarisasi Kepuasan:**
-    - Skor **1 (Kecewa)** rata-rata memiliki waktu pengiriman jauh lebih lama.
-    - Skor **5 (Sangat Puas)** memiliki waktu pengiriman paling singkat.
-    - Ini membuktikan bahwa **kecepatan pengiriman** adalah kunci utama kebahagiaan pelanggan.
+    **Satisfaction Polarization Pattern:**
+    - Score **1 (Disappointed)** is associated with significantly longer average delivery times.
+    - Score **5 (Highly Satisfied)** features the shortest delivery durations.
+    - This demonstrates that delivery speed is a critical factor in driving customer satisfaction.
     """)
