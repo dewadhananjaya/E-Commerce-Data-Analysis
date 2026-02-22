@@ -1,6 +1,8 @@
-# E-Commerce Data Analysis Dashboard 📊
+# E-Commerce Data Analysis Dashboard 
 
 This project is an in-depth analysis of the E-Commerce Public Dataset. The main objective is to identify the best-performing product categories and to understand the factors that influence customer satisfaction levels.
+
+---
 
 ## 📁 About Dataset
 
@@ -11,6 +13,8 @@ This is real commercial data, it has been anonymised, and references to the comp
 
 Source: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 
+---
+
 ## 📝 Project Description
 
 This dashboard is designed to provide business insights for stakeholders in the e-commerce industry. The analysis focuses on two main aspects:
@@ -19,36 +23,40 @@ This dashboard is designed to provide business insights for stakeholders in the 
 
 - Customer Satisfaction: Analyzing the relationship between delivery speed and the review score given by customers.
 
-## 🚀 Business Questions
+---
+
+## 💡 Business Questions
 
 - Which product categories contribute the highest revenue to the company?
 
 - What is the level of customer satisfaction based on review scores, and does delivery time affect those scores?
 
+---
+
 ## 📊 Streamlit Dashboard
 
 Link: https://e-commerce-analysis-dashboard-visualization.streamlit.app/
 
-<br>
+---
 
-# Dicoding Collection Dashboard ✨
+## 🚀 Setup & Run Project
 
-## Setup Environment - Anaconda
+### Setup Environment - Anaconda
 ```
-conda create --name main-ds python=3.9
+conda create --name main-ds python=3.12.12
 conda activate main-ds
 pip install -r requirements.txt
 ```
 
-## Setup Environment - Shell/Terminal
+### Setup Environment - Shell/Terminal
 ```
-mkdir proyek_analisis_data
-cd proyek_analisis_data
+mkdir data_analysis_project
+cd data_analysis_project
 pipenv install
 pipenv shell
 pip install -r requirements.txt
 ```
-## Run Streamlit App
+### Run Streamlit App
 ```
-streamlit run dashboard.py
+streamlit run dashboard/dashboard.py
 ```
